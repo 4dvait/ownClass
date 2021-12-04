@@ -1,6 +1,26 @@
-#Advait Namburi
+Advait Namburi
 
 import random
+
+#demo
+def main():
+    
+    newCoin = Coin("penny", 10, "Gold", 2002, 100) #creates a new coin object
+
+    newCoin.flip() #simulates the coin flip
+
+    #Edits the size variable and the year variable which also changes the value variable
+    newCoin.setSize(100)
+    newCoin.setYear(2002)
+
+    #prints out the variables of the coin
+    newCoin.getYear()
+    newCoin.getMetal()
+    newCoin.getName()
+    newCoin.getValue()
+    newCoin.getSize()
+
+
 class Coin:
 
     shape = 'Circle'
@@ -13,14 +33,14 @@ class Coin:
         self.__value = value #value of the coin, cannot be directly changed
         self.__year = year #when the coin was made
 
-    def flip(): #simulates the flipping of the coin
+    def flip(self): #simulates the flipping of the coin
         if random.randint(0,1) == 1:
             print("The coin landed as heads!")
         else:
             print("The coin landed as tails!")
 
     def age(self,newYear): #simulating if someone left the coin somewhere and how much value it would gain for X amount of years
-        newVal = self.__value*(e^(0.062*(newYear-self.__year)))
+        newVal = self.__value*(2.718^(0.062*(newYear-self.__year)))
         self.__value = newVal
         setYear(newYear)
 
@@ -48,4 +68,7 @@ class Coin:
 
     def getValue(self):
         return self.__value
+
+if __name__ == "__main__":
+    main()
 
