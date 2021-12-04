@@ -1,0 +1,2 @@
+# ownClass
+My own class!
